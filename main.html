@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Speech Synthesis</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	<div class="flex-box">
 
-		<input id="block_id" placeholder="Enter block id"/>
-  <input id="colour_id" placeholder="Enter colour Hexcode" />
-  <button id="change_button"  >Change</button>
-  <button id="reset_button">Reset</button>
-</div>
-  <div class="grid-container">
-    <div class="grid-item" id="1">1</div>
-    <div class="grid-item" id="2">2</div>
-    <div class="grid-item" id="3">3</div>
-    <div class="grid-item" id="4">4</div>
-    <div class="grid-item" id="5">5</div>
-    <div class="grid-item" id="6">6</div>
-    <div class="grid-item" id="7">7</div>
-    <div class="grid-item" id="8">8</div>
-    <div class="grid-item" id="9">9</div>
-  </div>
+    <div class="voiceinator">
 
+      <h1>The Voiceinator 5000</h1>
 
-    <script type="text/javascript" src="./script.js">
+      <select name="voice" id="voices">
+        <option value="">Select A Voice</option>
+      </select>
+
+      <label for="rate">Rate:</label>
+      <input name="rate" type="range" min="0" max="3" value="1" step="0.1">
+
+      <label for="pitch">Pitch:</label>
+
+      <input name="pitch" type="range" min="0" max="2" step="0.1">
+      <textarea name="text">Hello! I love JavaScript 👍</textarea>
+      <button id="stop">Stop!</button>
+      <button id="speak">Speak</button>
+
+    </div>
+
+<script>
+  const msg = new SpeechSynthesisUtterance();
+  let voices = [];
+  const voicesDropdown = document.querySelector('[name="voice"]');
+  const options = document.querySelectorAll('[type="range"], [name="text"]');
+  const speakButton = document.querySelector('#speak');
+  const stopButton = document.querySelector('#stop');
+
+  //Your code goes here
 </script>
 
 </body>
-
 </html>
